@@ -45,6 +45,7 @@ class XiamiBaseIE(InfoExtractor):
             '%s/%s%s' % (self._API_BASE_URL, item_id, '/type/%s' % typ if typ else ''),
             item_id, headers={
                 'Referer': referer,
+                'X-Real-IP': '211.161.244.70',
             })
         if 'message' in playlist and playlist['message']:
             raise ExtractorError(playlist['message'], expected=True)
